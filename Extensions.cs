@@ -14,6 +14,11 @@ namespace SVN.Math2
             return (int)Math.Round(param);
         }
 
+        public static int RoundToInt(this decimal param)
+        {
+            return (int)Math.Round(param);
+        }
+
         public static int FloorToInt(this float param)
         {
             return (int)Math.Floor(param);
@@ -24,12 +29,22 @@ namespace SVN.Math2
             return (int)Math.Floor(param);
         }
 
+        public static int FloorToInt(this decimal param)
+        {
+            return (int)Math.Floor(param);
+        }
+
         public static int CeilingToInt(this float param)
         {
             return (int)Math.Ceiling(param);
         }
 
         public static int CeilingToInt(this double param)
+        {
+            return (int)Math.Ceiling(param);
+        }
+
+        public static int CeilingToInt(this decimal param)
         {
             return (int)Math.Ceiling(param);
         }
