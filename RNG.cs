@@ -8,7 +8,8 @@ namespace SVN.Math2
 
         public static int Int(int min, int max)
         {
-            var result = RNG.Random.Next(min, max);
+            var diff = max - min;
+            var result = min + RNG.Random.Next(diff + 1);
             return result;
         }
 
