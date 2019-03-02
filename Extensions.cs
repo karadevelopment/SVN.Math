@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SVN.Math2
 {
@@ -149,6 +151,17 @@ namespace SVN.Math2
             var value = 1;
             var valueMax = Math.Pow(Math.Cosh(param), 2);
             return value / valueMax;
+        }
+
+        public static double[] Normalize(this double[] param)
+        {
+            return param.AsEnumerable().Normalize().ToArray();
+        }
+
+        public static List<double> Normalize(this IEnumerable<double> param)
+        {
+            var max = param.Max();
+            return param.Select(x => x / max).ToList();
         }
     }
 }
