@@ -13,6 +13,13 @@ namespace SVN.Math2
             return result;
         }
 
+        public static float Float(float min, float max)
+        {
+            var diff = max - min;
+            var result = min + diff * RNG.Random.NextDouble();
+            return (float)result;
+        }
+
         public static double Double(double min, double max)
         {
             var diff = max - min;

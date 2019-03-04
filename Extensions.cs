@@ -124,9 +124,20 @@ namespace SVN.Math2
             return (int)value.Approach(approximation, momentum);
         }
 
+        public static float Approach(this float param, float approximation, double momentum = .9)
+        {
+            var value = (double)param;
+            return (float)value.Approach(approximation, momentum);
+        }
+
         public static double Approach(this double param, double approximation, double momentum = .9)
         {
             return param * momentum + approximation * (1 - momentum);
+        }
+
+        public static float Sigmoid(this float param)
+        {
+            return (float)((double)param).Sigmoid();
         }
 
         public static double Sigmoid(this double param)
@@ -136,14 +147,29 @@ namespace SVN.Math2
             return value / valueMax;
         }
 
+        public static float SigmoidDerivative(this float param)
+        {
+            return (float)((double)param).SigmoidDerivative();
+        }
+
         public static double SigmoidDerivative(this double param)
         {
             return param.Sigmoid() * (1 - param.Sigmoid());
         }
 
+        public static float Tanh(this float param)
+        {
+            return (float)((double)param).Tanh();
+        }
+
         public static double Tanh(this double param)
         {
             return Math.Tanh(param);
+        }
+
+        public static float TanhDerivative(this float param)
+        {
+            return (float)((double)param).TanhDerivative();
         }
 
         public static double TanhDerivative(this double param)
