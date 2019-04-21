@@ -26,5 +26,10 @@ namespace SVN.Math2
             var result = min + diff * Random2.Generator.NextDouble();
             return result;
         }
+
+        public static bool Bool()
+        {
+            return Random2.Range(1, 2) == 1;
+        }
     }
 }
